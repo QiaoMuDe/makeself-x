@@ -21,7 +21,7 @@ install_path="/usr/bin"
 script_path=""
 
 # 解析参数
-while getopts "cne:p:h" opt; do
+while getopts "cn:en:p:h" opt; do
     case $opt in
         cn)
             script_path="CN/makeself.sh"
