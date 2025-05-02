@@ -4,8 +4,8 @@
 show_help() {
     echo "用法: $0 [选项]"
     echo "选项:"
-    echo "  -cn       安装中文版本到/usr/bin/"
-    echo "  -en       安装英文版本到/usr/bin/"
+    echo "  -c        安装中文版本到/usr/bin/"
+    echo "  -e        安装英文版本到/usr/bin/"
     echo "  -p <路径> 指定安装路径"
     echo "  -h        显示此帮助信息"
 }
@@ -21,13 +21,13 @@ install_path="/usr/bin"
 script_path=""
 
 # 解析参数
-while getopts "cne:p:h" opt; do
+while getopts "ce:p:h" opt; do
     case $opt in
-        cn)
+        c)
             script_path="CN/makeself.sh"
             header_path="CN/makeself-header.sh"
             ;;
-        en)
+        e)
             script_path="EN/makeself.sh"
             header_path="EN/makeself-header.sh"
             ;;
@@ -48,7 +48,7 @@ done
 
 # 检查是否选择了脚本
 if [ -z "$script_path" ]; then
-    echo "错误: 必须指定 -cn 或 -en 选项"
+    echo "错误: 必须指定 -c 或 -e 选项"
     show_help
     exit 1
 fi
