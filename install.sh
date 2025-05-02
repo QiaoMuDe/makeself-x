@@ -21,7 +21,7 @@ install_path="/usr/bin"
 script_path=""
 
 # 解析参数
-while getopts "c e:p:h" opt; do
+while getopts "cep:h" opt; do
     case $opt in
         c)
             script_path="CN/makeself.sh"
