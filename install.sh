@@ -62,6 +62,8 @@ fi
 # 检查是否已安装
 if command -v makeself.sh >/dev/null 2>&1 || command -v makeself-header.sh >/dev/null 2>&1; then
     echo "错误: makeself.sh 或 makeself-header.sh 已存在于系统PATH中"
+    whereis makeself.sh
+    whereis makeself-header.sh
     exit 1
 fi
 
